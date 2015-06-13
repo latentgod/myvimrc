@@ -11,7 +11,7 @@
 . Plugin 'majutsushi/tagbar'           “ 对一些名词 函数 类进行归类 可用于快速跳到所定义处                                                                                                       
 . Plugin 'terryma/vim-multiple-cursors'  “ 同名词多选状态 多项修改                                                                                                      
 . Plugin 'ianva/vim-youdao-translater'    ”     有道翻译插件  便于浏览文档                                                                         
-. Plugin 'scrooloose/syntastic'             “强大的语法检查（用的时候 需同时安装该语言的语法规，比如python 可以安装flake8）                                                                                                   
+. Plugin 'scrooloose/syntastic'             “强大的语法检查（用的时候 需同时安装该语言的语法标准，比如python 可以安装flake8）                                                                                                   
 . Plugin 'mattn/emmet-vim'       ”快速的生成代码 有它自定义的写法                                                                                                             
 . Plugin 'rkulla/pydiction'       ” 基于字典补全的python补全                                                                                                            
 . Plugin 'kien/ctrlp.vim'         “搜索当前项目文件                                                                                                            
