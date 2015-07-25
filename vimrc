@@ -52,9 +52,9 @@ filetype plugin indent on    " required
 filetype plugin on                        " 自动检测文件类型并加载相应的设置
 filetype indent on                        " 自动检测文件类型并加载相应的设置
 set wrap "自动折行当一行超过屏幕显示了,自动换行
-set foldmethod=syntax "设置自动折叠代码
+"set foldmethod=syntax "设置自动折叠代码
 " 基于缩进或语法进行代码折叠
-set foldmethod=indent
+"set foldmethod=indent
 " 启动 vim 时关闭折叠代码
 set nofoldenable
 " 开启语法高亮功能
@@ -84,6 +84,12 @@ command -bang -nargs=* WA wa<bang>
 command -bang -nargs=* -complete=file W w<bang> <args>
 command -bang -nargs=* -complete=file Wq wq<bang> <args>
 command -bang -nargs=* -complete=file WQ wq<bang> <args>
+command -bang -nargs=* -complete=file Wall w<bang> <args>
+command -bang -nargs=* -complete=file WALL w<bang> <args>
+command -bang -nargs=* -complete=file WAll w<bang> <args>
+command -bang -nargs=* -complete=file Wqall wqall<bang> <args>
+command -bang -nargs=* -complete=file WQALL wqall<bang> <args>
+command -bang -nargs=* -complete=file WQAll wqall<bang> <args>
 set t_Co=256
 if exists("tags")                        " 启动vim时，如果存在tags则自动加载
 	    set tags=tags
@@ -96,6 +102,20 @@ if exists("tags")                        " 启动vim时，如果存在tags则自
 		nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 set filetype=python
 au BufNewFile,BufRead *.py,*.pyw setf python
+
+
+"let mapleader=","  "I don't know this set what means
+
+" 为不同的文件设置缩进
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set ai
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sw=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set ts=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sts=4
+autocmd FileType javascript,html,css,xml set ai
+autocmd FileType javascript,html,css,xml set sw=2
+autocmd FileType javascript,html,css,xml set ts=2
+autocmd FileType javascript,html,css,xml set sts=2
+
 
 
 
@@ -262,6 +282,8 @@ let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_enable_balloons = 1
 "let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_php_checkers = ['php',' phpmd']
+"let makeprg = "php -l -d error_reporting=E_ALL -d display_errors=1"
+"let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 
 
 "------emmet-------------
@@ -307,14 +329,8 @@ autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
-
-"let mapleader=","  "I don't know this set what means
-
-
-
-
-
-
+"----joonty/vdebug.git-----
+Bundle 'joonty/vdebug.git'
 
 
 
